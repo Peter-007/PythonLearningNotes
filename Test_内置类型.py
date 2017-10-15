@@ -90,6 +90,7 @@ class TestDataType(unittest.TestCase):
         self.assertEqual(" abc ".rstrip(), " abc")      # 删除右边空格
         self.assertEqual(" abc ".strip(),  "abc")       # 删除前后边空格
         self.assertEqual("abbbc".strip('ac'), "bbb")    # 删除指定的前后缀字符
+        
 
 if __name__ == "__main__":
     unittest.main()
