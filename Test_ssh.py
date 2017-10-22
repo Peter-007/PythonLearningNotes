@@ -34,27 +34,10 @@ def exeCmd(strCmd, strException):
 def closeSSH():
     g_ssh.close()
 
-def ssh_test():
-    try:
-        ssh = paramiko.SSHClient()
-        ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
-        ssh.connect('192.168.8.100',22,'pi','raspberry')
-        stdin,stdout,stderr = ssh.exec_command('/sbin/ifconfig')
-        for x in stdout.readlines():
-            print(x.strip('\n'))
-        stdin, stdout, stderr = ssh.exec_command( 'ls' )
-        # print(stdin,stdout,stderr)
-        #print(stdout.read())
-        for x in stdout.readlines():
-            print(x.strip('\n'))
-
-    finally:
-        ssh.close()
 
 if __name__ == '__main__':
     openSSH('192.168.8.100','pi','raspberry')
     print(exeCmd('ls','ex') and exeCmd('ls', 'Public') and exeCmd('/sbin/ifconfig','8.200'))
-
     listResult = list(map(exeCmd,['ls','ls','/sbin/ifconfig'],['ex','public','192.168.8.100']))
     print(listResult)
     closeSSH()
