@@ -25,6 +25,26 @@
 
 '''
 
+def add(x,y):
+    '''
+
+    :param x:
+    :param y:
+    :return:
+
+    >>> add(1,2)
+    3
+
+    >>> list(map(add,[1,2,3,4],[5,6,7,8]))
+    [6, 8, 10, 12]
+
+    >>> r = map(add,[1,2,3,4],[5,6,7,8])
+    >>> list(r)
+    [6, 8, 10, 12]
+    '''
+    return x+y
+
+
 if __name__ == "__main__":
     import doctest
     doctest.testmod()

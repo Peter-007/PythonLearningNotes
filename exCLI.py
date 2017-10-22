@@ -7,6 +7,7 @@ def action1():
 def action2():
     print('call f2')
 
+
 def action3():
     print('call f3')
 
